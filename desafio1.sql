@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS SpotifyClone;
+CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
-CREATE DATABASE SpotifyClone;
+USE SpotifyClone;
 
 -- https://stackoverflow.com/questions/4834390/how-to-use-mysql-decimal
 
 CREATE TABLE planos(
     ID_PLANO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     TIPO_PLANO VARCHAR(15) NOT NULL DEFAULT 'Sem plano',
-    VALOR_PLANO DECIMAL(7, 2) NOT NULL DEFAULT 0,
+    VALOR_PLANO DECIMAL(7, 2) NOT NULL DEFAULT 0
 ) engine = InnoDB;
 
 INSERT INTO planos (TIPO_PLANO, VALOR_PLANO)
@@ -21,7 +21,7 @@ CREATE TABLE usuarios(
     ID_USUARIO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     NOME_USUARIO VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
     IDADE INTEGER NOT NULL DEFAULT 1,
-    FOREIGN KEY `ID_PLANO_FK` (ID_PLANO) REFERENCES planos(`ID_PLANO`) ON DELETE CASCADE
+    FOREIGN KEY `ID_PLANO_FK` (ID_PLANO) REFERENCES planos(ID_PLANO) ON DELETE CASCADE
 ) engine = InnoDB;
 
 INSERT INTO usuarios (NOME_USUARIO, IDADE)
@@ -95,4 +95,28 @@ VALUES
   ('Rock His Everything', 223, 4),
   ('Home Forever', 231, 4),
   ('Diamond Power', 241, 4),
-  ("Let's Be Silly", 132, 4);
+  ("Let's Be Silly", 132, 4),
+  ("Let's Be Silly", 132, 5),
+  ("Let's Be Silly", 132, 5),
+  ("Let's Be Silly", 132, 5),
+  ("Let's Be Silly", 132, 6),
+  ("Let's Be Silly", 132, 6),
+  ("Let's Be Silly", 132, 6),
+  ("Let's Be Silly", 132, 6),
+  ("Let's Be Silly", 132, 6),
+  ("Let's Be Silly", 132, 7),
+  ("Let's Be Silly", 132, 7),
+  ("Let's Be Silly", 132, 7),
+  ("Let's Be Silly", 132, 7),
+  ("Let's Be Silly", 132, 8),
+  ("Let's Be Silly", 132, 8),
+  ("Let's Be Silly", 132, 8),
+  ("Let's Be Silly", 132, 8),
+  ("Let's Be Silly", 132, 9),
+  ("Let's Be Silly", 132, 9),
+  ("Let's Be Silly", 132, 9),
+  ("Let's Be Silly", 132, 10),
+  ("Let's Be Silly", 132, 10),
+  ("Let's Be Silly", 132, 10),
+  ("Let's Be Silly", 132, 10),
+  ("Let's Be Silly", 132, 10);
