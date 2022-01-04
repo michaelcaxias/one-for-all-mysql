@@ -26,11 +26,16 @@ CREATE TABLE usuarios(
 
 INSERT INTO usuarios (NOME_USUARIO, IDADE)
 VALUES
-  ('Tathi'),
-  ('Cintia'),
-  ('Bill'),
-  ('Roger'),
-  ('Norman');
+  ('Tathi', 23),
+  ('Cintia', 35),
+  ('Bill', 20),
+  ('Roger', 45),
+  ('Norman', 58),
+  ('Patrick', 33),
+  ('Vivian', 26),
+  ('Carol', 19),
+  ('Angelina', 42),
+  ('Paul', 46);
 
 
 CREATE TABLE artistas(
