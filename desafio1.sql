@@ -70,18 +70,24 @@ CREATE TABLE cancoes(
     ID_CANCAO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     NOME_CANCAO VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
     DURACAO_CANCAO_SEGUNDOS INTEGER NOT NULL DEFAULT 0,
-    FOREIGN KEY `ID_ALBUM_FK` (ID_ALBUM) REFERENCES albuns(ID_ALBUM) ON DELETE CASCADE
+    ID_ALBUM INTEGER NOT NULL DEFAULT 0,
     FOREIGN KEY `ID_ARTISTA_FK` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
 ) engine = InnoDB;
 
-INSERT INTO cancoes (NOME_CANCAO, DURACAO_CANCAO_SEGUNDOS)
+INSERT INTO cancoes (NOME_CANCAO, DURACAO_CANCAO_SEGUNDOS, ID_ALBUM)
 VALUES
-  ('Soul For Us', 200),
-  ('Reflections Of Magic', 163),
-  ('Dance With Her Own', 116),
-  ('Troubles Of My Inner Fire', 203),
-  ('Time Fireworks', 152),
-  ('Magic Circus', 105),
-  ('Honey, So Do I', 207),
-  ('Sweetie, Lets Go Wild', 139),
-  ('She Knows', 244);
+  ('Soul For Us', 200, 1),
+  ('Reflections Of Magic', 163, 1),
+  ('Dance With Her Own', 116, 1),
+  ('Troubles Of My Inner Fire', 203, 2),
+  ('Time Fireworks', 152, 2),
+  ('Magic Circus', 105, 3),
+  ('Honey, So Do I', 207, 3),
+  ('Sweetie, Lets Go Wild', 139, 3),
+  ('She Knows', 244, 3),
+  ('Fantasy For Me', 100, 4),
+  ('Celebration Of More', 146, 4),
+  ('Rock His Everything', 223, 4),
+  ('Home Forever', 231, 4),
+  ('Diamond Power', 241, 4),
+  ("Let's Be Silly", 132, 4);
