@@ -48,9 +48,9 @@ VALUES
   ('Fog');
 
 CREATE TABLE albuns(
-    ID_USUARIO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ID_ALBUM INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     NOME_ALBUM VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
-    FOREIGN KEY `ID_ARTISTA` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
+    FOREIGN KEY `ID_ARTISTA_FK` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
 ) engine = InnoDB;
 
 INSERT INTO albuns (NOME_ALBUM)
@@ -70,19 +70,18 @@ CREATE TABLE cancoes(
     ID_CANCAO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     NOME_CANCAO VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
     DURACAO_CANCAO_SEGUNDOS INTEGER NOT NULL DEFAULT 0,
-    FOREIGN KEY `ID_ALBUM` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
-    FOREIGN KEY `ID_ARTISTA` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
+    FOREIGN KEY `ID_ALBUM_FK` (ID_ALBUM) REFERENCES albuns(ID_ALBUM) ON DELETE CASCADE
+    FOREIGN KEY `ID_ARTISTA_FK` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
 ) engine = InnoDB;
 
-INSERT INTO cancoes (NOME_ALBUM)
+INSERT INTO cancoes (NOME_CANCAO, DURACAO_CANCAO_SEGUNDOS)
 VALUES
-  ('Envious'),
-  ('Exuberant'),
-  ('Hallowed Steam'),
-  ('Incandescent'),
-  ('Temporary Culture'),
-  ('Library of liberty'),
-  ('Chained Down'),
-  ('Cabinet of fools'),
-  ('No guarantees'),
-  ('Apparatus');
+  ('Soul For Us', 200),
+  ('Reflections Of Magic', 163),
+  ('Dance With Her Own', 116),
+  ('Troubles Of My Inner Fire', 203),
+  ('Time Fireworks', 152),
+  ('Magic Circus', 105),
+  ('Honey, So Do I', 207),
+  ('Sweetie, Lets Go Wild', 139),
+  ('She Knows', 244);
