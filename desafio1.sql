@@ -4,6 +4,7 @@ USE SpotifyClone;
 
 -- https://stackoverflow.com/questions/4834390/how-to-use-mysql-decimal
 
+DROP TABLE IF EXISTS planos;
 CREATE TABLE planos(
     ID_PLANO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     TIPO_PLANO VARCHAR(15) NOT NULL DEFAULT 'Sem plano',
@@ -16,6 +17,21 @@ VALUES
   ('Familiar', '7.99'),
   ('Universitario', '5.99'),
   ('Pessoal', '6.99');
+
+DROP TABLE IF EXISTS artistas;
+CREATE TABLE artistas(
+    ID_ARTISTA INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    NOME_ARTISTA VARCHAR(50) NOT NULL DEFAULT 'Artista Desconhecido'
+) engine = InnoDB;
+
+INSERT INTO artistas (NOME_ARTISTA)
+VALUES
+  ('Walter Phoenix'),
+  ('Freedie Shannon'),
+  ('Lance Day'),
+  ('Peter Strong'),
+  ('Tyler Isle'),
+  ('Fog');
 
 CREATE TABLE usuarios(
     ID_USUARIO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -36,21 +52,6 @@ VALUES
   ('Carol', 19),
   ('Angelina', 42),
   ('Paul', 46);
-
-
-CREATE TABLE artistas(
-    ID_ARTISTA INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    NOME_ARTISTA VARCHAR(50) NOT NULL DEFAULT 'Artista Desconhecido',
-) engine = InnoDB;
-
-INSERT INTO artistas (NOME_ARTISTA)
-VALUES
-  ('Walter Phoenix'),
-  ('Freedie Shannon'),
-  ('Lance Day'),
-  ('Peter Strong'),
-  ('Tyler Isle'),
-  ('Fog');
 
 CREATE TABLE albuns(
     ID_ALBUM INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
