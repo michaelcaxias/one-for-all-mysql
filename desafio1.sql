@@ -55,6 +55,40 @@ VALUES
   ('Angelina', 42, 2),
   ('Paul', 46, 2);
 
+DROP TABLE IF EXISTS seguindo_artistas;
+CREATE TABLE seguindo_artistas(
+    ID_SEGUINDO_ARTISTA INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ID_USUARIO INTEGER NOT NULL DEFAULT 1,
+    ID_ARTISTA INTEGER NOT NULL DEFAULT 1,
+    FOREIGN KEY `ID_USUARIO_FK` (ID_USUARIO) REFERENCES usuarios(ID_USUARIO) ON DELETE CASCADE,
+    FOREIGN KEY `ID_ARTISTA_FK` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE
+) engine = InnoDB;
+
+INSERT INTO seguindo_artistas (ID_USUARIO, ID_ARTISTA)
+VALUES
+    (1,1),
+    (1,2),
+    (1,3),
+    (2,1),
+    (2,3),
+    (3,4),
+    (3,1),
+    (4,2),
+    (5,5),
+    (5,6),
+    (6,6),
+    (6,3),
+    (6,1),
+    (7,4),
+    (7,5),
+    (8,1),
+    (8,5),
+    (9,6),
+    (9,2),
+    (9,3),
+    (10,4),
+    (10,6);
+
 CREATE TABLE albuns(
     ID_ALBUM INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     NOME_ALBUM VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
