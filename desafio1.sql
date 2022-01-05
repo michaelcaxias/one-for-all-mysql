@@ -33,25 +33,27 @@ VALUES
   ('Tyler Isle'),
   ('Fog');
 
+DROP TABLE IF EXISTS usuarios;
 CREATE TABLE usuarios(
     ID_USUARIO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     NOME_USUARIO VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
     IDADE INTEGER NOT NULL DEFAULT 1,
+    ID_PLANO INTEGER NOT NULL DEFAULT 1,
     FOREIGN KEY `ID_PLANO_FK` (ID_PLANO) REFERENCES planos(ID_PLANO) ON DELETE CASCADE
 ) engine = InnoDB;
 
-INSERT INTO usuarios (NOME_USUARIO, IDADE)
+INSERT INTO usuarios (NOME_USUARIO, IDADE, ID_PLANO)
 VALUES
-  ('Tathi', 23),
-  ('Cintia', 35),
-  ('Bill', 20),
-  ('Roger', 45),
-  ('Norman', 58),
-  ('Patrick', 33),
-  ('Vivian', 26),
-  ('Carol', 19),
-  ('Angelina', 42),
-  ('Paul', 46);
+  ('Thati', 23, 1),
+  ('Cintia', 35, 2),
+  ('Bill', 20, 3),
+  ('Roger', 45, 4),
+  ('Norman', 58, 4),
+  ('Patrick', 33, 2),
+  ('Vivian', 26, 3),
+  ('Carol', 19, 3),
+  ('Angelina', 42, 2),
+  ('Paul', 46, 2);
 
 CREATE TABLE albuns(
     ID_ALBUM INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
