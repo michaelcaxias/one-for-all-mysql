@@ -95,21 +95,21 @@ CREATE TABLE albuns(
     NOME_ALBUM VARCHAR(50) NOT NULL DEFAULT 'Sem nome',
     ID_ARTISTA INTEGER NOT NULL DEFAULT 1,
     FOREIGN KEY `ID_ARTISTA_FK` (ID_ARTISTA) REFERENCES artistas(ID_ARTISTA) ON DELETE CASCADE,
-    DATA_LANCAMENTO DATE NOT NULL DEFAULT '0000-00-00'
+    ANO_LANCAMENTO INTEGER NOT NULL DEFAULT 0
 ) engine = InnoDB;
 
-INSERT INTO albuns (NOME_ALBUM, ID_ARTISTA, DATA_LANCAMENTO)
+INSERT INTO albuns (NOME_ALBUM, ID_ARTISTA, ANO_LANCAMENTO)
 VALUES
-  ('Envious'),
-  ('Exuberant'),
-  ('Hallowed Steam'),
-  ('Incandescent'),
-  ('Temporary Culture'),
-  ('Library of liberty'),
-  ('Chained Down'),
-  ('Cabinet of fools'),
-  ('No guarantees'),
-  ('Apparatus');
+  ('Envious',1,1990),
+  ('Exuberant',1,1993),
+  ('Hallowed Steam',4,1995),
+  ('Incandescent',3,1998),
+  ('Temporary Culture',2,2001),
+  ('Library of liberty',2,2003),
+  ('Chained Down',5,2007),
+  ('Cabinet of fools',5,2012),
+  ('No guarantees',5,2015),
+  ('Apparatus',6,2015);
 
 CREATE TABLE cancoes(
     ID_CANCAO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
