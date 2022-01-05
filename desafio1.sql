@@ -174,7 +174,7 @@ CREATE TABLE musicas_reproduzidas(
 ) engine = InnoDB;
 
 INSERT INTO musicas_reproduzidas (ID_USUARIO, ID_CANCAO, DATA_REPRODUCAO)
--- Valores inseridos com a dica do Luiz Gustavo, turma 14
+-- Valores inseridos com a dica do Luiz Gustavo e Thiago Frozzi, turma 14.
 VALUES
   (1, 36, "2020-02-28 10:45:55"),
   (1, 25, "2020-05-02 05:30:35"),
