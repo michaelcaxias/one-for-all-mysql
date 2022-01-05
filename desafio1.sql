@@ -13,10 +13,10 @@ CREATE TABLE planos(
 
 INSERT INTO planos (TIPO_PLANO, VALOR_PLANO)
 VALUES
-  ('Gratuito', '0'),
-  ('Familiar', '7.99'),
-  ('Universitario', '5.99'),
-  ('Pessoal', '6.99');
+  ('Gratuito', 0),
+  ('Familiar', 7.99),
+  ('Universitario', 5.99),
+  ('Pessoal', 6.99);
 
 DROP TABLE IF EXISTS artistas;
 CREATE TABLE artistas(
