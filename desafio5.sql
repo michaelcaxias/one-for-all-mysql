@@ -4,4 +4,6 @@ SELECT c.NOME_CANCAO AS cancao,
   INNER JOIN SpotifyClone.musicas_reproduzidas AS m
   ON m.ID_CANCAO = c.ID_CANCAO
   GROUP BY c.NOME_CANCAO
-  ORDER BY reproducoes DESC;
+  ORDER BY reproducoes DESC,
+  c.NOME_CANCAO ASC
+  LIMIT 2;
