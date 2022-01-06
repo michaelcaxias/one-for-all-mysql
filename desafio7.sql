@@ -7,4 +7,5 @@ SELECT a.NOME_ARTISTA AS artista,
   INNER JOIN SpotifyClone.seguindo_artistas AS s
   ON a.ID_ARTISTA = s.ID_ARTISTA
   GROUP BY artista, album
-  LIMIT 9;
+  ORDER BY seguidores DESC, artista ASC, album ASC
+  LIMIT 10;
