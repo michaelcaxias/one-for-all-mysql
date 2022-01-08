@@ -4,6 +4,7 @@ USE SpotifyClone;
 
 -- https://stackoverflow.com/questions/4834390/how-to-use-mysql-decimal
 
+
 DROP TABLE IF EXISTS planos;
 CREATE TABLE planos(
     ID_PLANO INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -44,6 +45,7 @@ CREATE TABLE usuarios(
 
 INSERT INTO usuarios (NOME_USUARIO, IDADE, ID_PLANO)
 VALUES
+-- Valores inseridos com a utilização da ferramenta SQLizer
   ('Thati', 23, 1),
   ('Cintia', 35, 2),
   ('Bill', 20, 3),
@@ -100,6 +102,7 @@ CREATE TABLE albuns(
 
 INSERT INTO albuns (NOME_ALBUM, ID_ARTISTA, ANO_LANCAMENTO)
 VALUES
+-- Valores inseridos com a utilização da ferramenta SQLizer
   ('Envious',1,1990),
   ('Exuberant',1,1993),
   ('Hallowed Steam',4,1995),
@@ -121,6 +124,7 @@ CREATE TABLE cancoes(
 ) engine = InnoDB;
 
 INSERT INTO cancoes (NOME_CANCAO, DURACAO_CANCAO_SEGUNDOS, ID_ALBUM)
+-- Valores inseridos com a utilização da ferramenta SQLizer
 VALUES
     ('Soul For Us',200,1),
     ('Reflections Of Magic',163,1),
